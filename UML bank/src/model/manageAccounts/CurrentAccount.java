@@ -1,12 +1,25 @@
 package model.manageAccounts;
 
+import model.manageClients.Client;
+
 public class CurrentAccount extends Account{
 	
-	Double debitLimit;
+	private String accNumber;
+	private Double balance, debitLimit;
 	
-	public CurrentAccount (String type, String number, Double amount, Double debitLimit) {
-		super(type, number, amount);
+	public CurrentAccount (String accNumber, String type, Client client, Double balance,
+							String thisAccNumber, Double amount, Double debitLimit) {
+		super(type, client, thisAccNumber, amount);
 		this.debitLimit = -50.0;
+		this.balance = 0.0;
+	}
+	
+	public boolean debit(Double amount) {
+		return false;
+	}
+	
+	public boolean credit(Double amount) {
+		return false;
 	}
 
 }

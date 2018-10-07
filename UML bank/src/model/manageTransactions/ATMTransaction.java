@@ -9,9 +9,16 @@ public abstract class ATMTransaction {
 	
 	public ATMTransaction(String id, String type, Date date) {
 		this.id = id;
-		this.type = type;
 		this.date = date;
+		this.type = type;
 	}
+	
+	public boolean modifies(String whatToModify, Object newParameter) {
+		return false;
+	}
+	
+
+	
 
 	public String getId() {
 		return id;

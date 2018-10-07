@@ -1,13 +1,14 @@
 package model.manageFinancialInstruments;
 
 import model.manageAccounts.Account;
+import model.manageClients.Client;
 
 public class DebitCard extends Card{
 	
-	String number;
+	private String number;
 
-	public DebitCard(String type, Double limit, Account account, String number) {
-		super(type, limit, account);
+	public DebitCard(String type, Client client, Double limit, Account account, String number) {
+		super(type, client, limit, account);
 		this.number = "";
 	}
 	

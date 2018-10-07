@@ -1,12 +1,15 @@
 package model.manageAccounts;
 
+import model.manageClients.Client;
+
 public abstract class Account {
 	
+	private Client client;
 	private String type, number;
 	private Double amount;
 	
-	public Account(String type, String number, Double amount) {
-		super();
+	public Account(String type, Client client, String number, Double amount) {
+		this.client = client;
 		this.type = type;
 		this.number = number;
 		this.amount = amount;

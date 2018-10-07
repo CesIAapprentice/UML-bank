@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 import model.manageClients.Client;
+import model.manageFinancialInstruments.DebitCard;
 
 public class BranchOffice {
 	
@@ -13,7 +14,7 @@ public class BranchOffice {
 		this.customers = new ArrayList<Client>();
 	}
 	
-	public boolean managesClient(Client client) {
+	public boolean managesDebitCard(DebitCard debitcard) {
 		return false;
 	}
 }
