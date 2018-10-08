@@ -8,14 +8,22 @@ import model.manageTransactions.ATMTransaction;
 public class WithdrawalTransaction extends ATMTransaction {
 
 	Double amount;
+	Account account;
 	
-	public WithdrawalTransaction(String id, String type, Date date, Double amount) {
+// ----------------------------------------------------------
+// CONSTRUCTOR		
+	
+	public WithdrawalTransaction(String id, String type, Date date, Account account, Double amount) {
 		super(id, type, date);
+		this.account = account;
 		this.amount = amount;
 	}
+	
+// ----------------------------------------------------------
+// METHODS		
 
-	public boolean withdrawal(Account sourceAcc, Double amount) {
-		return false;
+	public boolean withdrawal() {
+		account.setAmount(account.getAmount() - this.amount);
+		return true;
 	}
-
 }

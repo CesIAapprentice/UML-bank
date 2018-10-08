@@ -5,15 +5,24 @@ import model.manageClients.Client;
 
 public class DebitCard extends Card{
 	
-	private String number;
-
-	public DebitCard(String type, Client client, Double limit, Account account, String number) {
-		super(type, client, limit, account);
-		this.number = "";
+// ----------------------------------------------------------
+// CONSTRUCTOR		
+	
+	public DebitCard(String type, String number, Client client, Double limit, Account account) {
+		super(type, number, client, limit, account);
 	}
+	
+// ----------------------------------------------------------
+// METHODS
 	
 	public boolean retrieveMoney(Account account) {
 		return false;
 	}
 
+@Override
+	public Account access() {
+		return super.getAccount();
+	}
+	
+	
 }

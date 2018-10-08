@@ -14,6 +14,11 @@ public abstract class Account {
 		this.number = number;
 		this.amount = amount;
 	}
+	
+	public abstract Double retrieve(Double amount);
+	
+//-------------------------------------------------------------------------------------
+// GETTERS & SETTERS	
 
 	public String getType() {
 		return type;
@@ -38,6 +43,16 @@ public abstract class Account {
 	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
+	
 	
 	
 

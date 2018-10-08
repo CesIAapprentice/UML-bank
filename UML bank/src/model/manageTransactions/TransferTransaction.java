@@ -7,17 +7,29 @@ import model.manageAccounts.Account;
 public class TransferTransaction extends ATMTransaction {
 	
 	Double amount;
-	Account destinyAcc;
+	Account sourceAcc, destinyAcc;
+	
+// ----------------------------------------------------------
+// CONSTRUCTOR		
 
-	public TransferTransaction(String id, String type, Date date, Double amount, Account destinyAcc) {
+	public TransferTransaction(String id, String type, Date date, Double amount, Account sourceAcc, Account destinyAcc) {
 		super(id, type, date);
 		this.amount = amount;
+		this.sourceAcc = sourceAcc;
 		this.destinyAcc = destinyAcc;
 	}
+	
+// ----------------------------------------------------------
+// METHODS		
 
 	public boolean transfer() {
-		return false;
+		sourceAcc.setAmount(sourceAcc.getAmount() - this.amount);
+		destinyAcc.setAmount(destinyAcc.getAmount() + this.amount);
+		return true;
 	}
+	
+// --------------------------------------------------------
+// GETTERS & SETTERS	
 	
 	public Double getAmount() {
 		return this.getAmount();

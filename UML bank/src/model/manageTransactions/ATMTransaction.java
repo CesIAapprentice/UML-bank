@@ -7,18 +7,24 @@ public abstract class ATMTransaction {
 	private String id, type;
 	private Date date;
 	
+// ----------------------------------------------------------
+// CONSTRUCTOR	
+	
 	public ATMTransaction(String id, String type, Date date) {
 		this.id = id;
 		this.date = date;
 		this.type = type;
 	}
 	
+// ----------------------------------------------------------
+// METHODS		
+	
 	public boolean modifies(String whatToModify, Object newParameter) {
 		return false;
 	}
 	
-
-	
+// --------------------------------------------------------
+// GETTERS & SETTERS
 
 	public String getId() {
 		return id;

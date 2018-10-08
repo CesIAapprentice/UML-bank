@@ -13,10 +13,10 @@ public class PinValidationTransaction extends ATMTransaction {
 	}
 
 	public boolean pinChange(String pin) {
-		String temp = ""; 
-		temp += this.newPin;
-		this.newPin = pin;
-		this.oldPin = temp;
+		oldPin = "";
+		oldPin += newPin;
+		newPin = "";
+		newPin += pin;
 		return true;
 	}
 }

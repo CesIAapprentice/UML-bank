@@ -5,17 +5,26 @@ import model.manageClients.Client;
 
 public class CreditCard extends Card{
 	
-	private String number;
 	private Double debt;
+	
+// ----------------------------------------------------------
+// CONSTRUCTOR		
 
-	public CreditCard(String type, Client client, Double limit, Account account, String number, Double debt) {
-		super(type, client, limit, account);
-		this.number = "";
+	public CreditCard(String type, String number, Client client, Double limit, Account account, Double debt) {
+		super(type, number, client, limit, account);
 		this.debt = 0.0;
 	}
 	
-	public boolean addToDebt() {
-		return false;
+// ----------------------------------------------------------
+// METHODS
+	
+	public boolean addToDebt(Double amount) {
+		debt += amount;
+		return true;
 	}
 
+	@Override
+	public Account access() {
+		return super.getAccount();
+	}
 }
