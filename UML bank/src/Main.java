@@ -19,5 +19,4 @@ public class Main {
 			System.out.println(creditCards + " " + testClient.getCards().get(creditCards));
 		}
 	}
-
 }
