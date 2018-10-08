@@ -8,8 +8,8 @@ public class DebitCard extends Card{
 // ----------------------------------------------------------
 // CONSTRUCTOR		
 	
-	public DebitCard(String type, String number, Client client, Double limit, Account account) {
-		super(type, number, client, limit, account);
+	public DebitCard(String type, String number, String pin, Client client, Double limit, Account account) {
+		super(type, number, pin, client, limit, account);
 	}
 	
 // ----------------------------------------------------------

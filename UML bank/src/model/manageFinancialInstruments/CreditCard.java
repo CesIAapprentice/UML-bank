@@ -10,8 +10,8 @@ public class CreditCard extends Card{
 // ----------------------------------------------------------
 // CONSTRUCTOR		
 
-	public CreditCard(String type, String number, Client client, Double limit, Account account, Double debt) {
-		super(type, number, client, limit, account);
+	public CreditCard(String type, String number, String pin, Client client, Double limit, Account account, Double debt) {
+		super(type, number, pin, client, limit, account);
 		this.debt = 0.0;
 	}
 	

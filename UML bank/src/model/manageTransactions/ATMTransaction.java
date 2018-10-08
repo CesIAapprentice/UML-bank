@@ -1,6 +1,6 @@
 package model.manageTransactions;
 
-import java.sql.Date;
+import java.util.Date;
 
 public abstract class ATMTransaction {
 	

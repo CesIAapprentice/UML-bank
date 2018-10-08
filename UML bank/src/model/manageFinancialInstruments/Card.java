@@ -5,7 +5,7 @@ import model.manageClients.Client;
 
 public abstract class Card {
 	
-	private String type, number;
+	private String type, number, pin;
 	private Client client;
 	private Double limit;
 	private Account account;
@@ -13,9 +13,10 @@ public abstract class Card {
 // ----------------------------------------------
 // CONSTRUCTOR	
 	
-	public Card(String type, String number, Client client, Double limit, Account account) {
+	public Card(String type, String number, String pin, Client client, Double limit, Account account) {
 		this.type = type;
 		this.number = number;
+		this.pin = pin;
 		this.client = client;
 		this.limit = limit;
 		this.account = account;
@@ -67,6 +68,14 @@ public abstract class Card {
 
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
 	}
 	
 		

@@ -1,6 +1,8 @@
 package model.manageClients;
 
 import java.util.HashMap;
+import java.util.Random;
+
 import model.manageAccounts.Account;
 import model.manageAccounts.CurrentAccount;
 import model.manageAccounts.SavingAccount;
@@ -10,6 +12,7 @@ import model.manageFinancialInstruments.DebitCard;
 
 public class Client {
 	
+	Random random;
 	String id, name, address;
 	HashMap<String, Account> accounts;
 	HashMap<String, Card> cards;
@@ -18,6 +21,7 @@ public class Client {
 // CONSTRUCTOR	
 	
 	public Client(String id) {
+		this.random = new Random();
 		this.id = id;
 		this.name = "";
 		this.address = "";
@@ -55,14 +59,15 @@ public class Client {
 	}
 	
 	public boolean addCard(String typeOfCard, Account account) {
-		String CardNumber = getNewCardNumber();
+		String cardNumber = getNewCardNumber();
+		String pin = randomdigit() + randomdigit() + randomdigit() + randomdigit();
 		if(typeOfCard.equalsIgnoreCase("CREDITCARD")) {
-			ownedCards().put(CardNumber, new CreditCard("CREDITCARD", CardNumber, this , -50.0 , account, 0.0));
+			ownedCards().put(cardNumber, new CreditCard("CREDITCARD", cardNumber, pin, this , -50.0 , account, 0.0));
 			return true;
 		}
 		
 		if(typeOfCard.equalsIgnoreCase("DEBITCARD")) {
-			ownedCards().put(CardNumber, new DebitCard("DEBITCARD", CardNumber, this, -50.0, account));
+			ownedCards().put(cardNumber, new DebitCard("DEBITCARD", cardNumber, pin, this, -50.0, account));
 			return true;
 		}
 		return false;
@@ -101,6 +106,12 @@ public class Client {
 		return newCardNumber;
 	}
 	
+// --------------------------------------------------------
+// HELPERS	
+
+	public String randomdigit() {
+		return String.valueOf(this.random.nextInt(10));
+	}
 	
 	
 // --------------------------------------------------------
